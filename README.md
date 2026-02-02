@@ -66,5 +66,5 @@ Para simplificar o ambiente de execução e evitar a necessidade de bancos de da
 ## 👨‍💻 Equipe Responsavel
 
 * **Silas Santos da Silva**
-* **Observação: Este projeto é uma atividade acadêmica realizada para a disciplina de Sistemas de Informação/Programação, focada no desenvolvimento de aplicações web robustas com Spring Boot.**
+* **Observação: Este projeto é uma atividade acadêmica/pessoal, focada no desenvolvimento de aplicações web robustas com Spring Boot.**
 
