@@ -1,79 +1,52 @@
-📊 FlowControl (FWC) - Gestão Financeira Pessoal
-O FlowControl é uma plataforma robusta de gerenciamento financeiro pessoal desenvolvida em Java com o framework Spring Boot. O projeto combina uma interface moderna e intuitiva em HTML/CSS (Thymeleaf) com uma arquitetura de back-end sólida, permitindo que usuários controlem suas receitas e despesas de forma categorizada e segura.
+# 📊 FlowControl (FWC) - Gestão Financeira Pessoal
 
-O objetivo principal deste projeto foi aplicar conceitos avançados de Programação Orientada a Objetos (POO) e padrões de arquitetura de software em um ecossistema Spring real.
+O **FlowControl** é uma plataforma completa para gerenciamento de finanças pessoais, desenvolvida em Java com o framework Spring Boot. O projeto permite que usuários gerenciem suas receitas e despesas com foco em usabilidade e clareza visual, utilizando uma interface moderna com elementos de *Glassmorphism*.
 
-✨ Funcionalidades Principais
-A plataforma foca na experiência do usuário e na clareza dos dados financeiros:
+O principal objetivo deste projeto foi aplicar de forma prática os conceitos de **Programação Orientada a Objetos (POO)** e a arquitetura **MVC** em um sistema de controle de fluxo de caixa funcional.
 
-Autenticação e Sessão: Sistema de cadastro de novos usuários e login com gerenciamento de sessão via HttpSession.
+---
 
-Painel de Transações: Visualização clara de todas as movimentações financeiras.
+## ✨ Funcionalidades Principais
 
-Gestão de Movimentações: Criação e exclusão de transações com atributos de Nome, Valor, Tipo (Renda/Despesa), Categoria e Prioridade.
+A plataforma oferece uma interface intuitiva para o controle financeiro diário:
 
-Cálculo de Saldo Dinâmico: O sistema processa automaticamente o saldo total do usuário com base nas entradas e saídas.
+* **Autenticação de Usuários:** Sistema completo de cadastro e login com gerenciamento de sessão via `HttpSession`.
+* **Gestão de Transações:** Permite criar, listar e excluir movimentações financeiras.
+* **Categorização e Priorização:** Cada transação possui tipo (Renda/Despesa), categoria (Alimentação, Lazer, Salário, etc.) e nível de prioridade.
+* **Painel de Saldo Dinâmico:** Visualização do saldo total calculado em tempo real, com feedback visual (saldo em vermelho para valores negativos).
+* **Filtros Avançados:** Opção para filtrar a visualização por tipo de transação (apenas entradas ou apenas saídas).
 
-Filtragem Inteligente: Capacidade de filtrar transações por tipo para uma análise mais detalhada.
+---
 
-Design Responsivo: Interface com cards arredondados e feedback visual (saldo em vermelho para valores negativos).
+## 🧠 Arquitetura e Decisões de Projeto
 
-🛠️ Tecnologias e Ferramentas
-Linguagem: Java 21.
+O projeto utiliza o padrão arquitetural **MVC (Model-View-Controller)**, separando as responsabilidades de forma modular:
 
-Framework: Spring Boot 4.0.2.
+### Camadas do Sistema
+* **Model:** Representa as entidades e a estrutura dos dados (ex: `Usuario.java`, `Transacao.java`).
+* **View:** Interface de apresentação desenvolvida em HTML5 e CSS3, utilizando **Thymeleaf** para renderização dinâmica dos dados.
+* **Controller:** Atua como intermediário, processando as requisições do usuário e coordenando as respostas (ex: `UsuarioController.java`, `TransacaoController.java`).
+* **Service:** Camada que contém a lógica de negócio, como validação de e-mail e cálculo de saldos (ex: `UsuarioService.java`, `TransacaoService.java`).
 
-Template Engine: Thymeleaf para renderização dinâmica do front-end.
+### Persistência de Dados em JSON
+Para simplificar o ambiente de execução e evitar a necessidade de bancos de dados externos complexos, a persistência foi implementada através de arquivos JSON:
+* **Mecanismo:** Utiliza a biblioteca **Jackson** para serialização e desserialização de objetos.
+* **Repositórios:** As classes `UsuarioRepository` e `TransacaoRepository` gerenciam a leitura e escrita automática nos arquivos localizados na pasta `flowcontrol-data/`.
 
-Persistência: Arquivos JSON (Jackson ObjectMapper) para armazenamento de dados sem necessidade de banco de dados externo.
+### Conceitos de Orientação a Objetos (OO)
+* **Encapsulamento:** Proteção dos dados através de atributos privados e métodos getters/setters.
+* **Injeção de Dependência:** O Spring gerencia automaticamente as instâncias dos serviços e repositórios, reduzindo o acoplamento.
 
-Build & Dependências: Maven.
+---
 
-🚀 Como Executar o Projeto
-Pré-requisitos
-Java 21 ou superior.
+## 🛠️ Como Executar o Projeto
 
-Maven instalado (ou uso do mvnw incluso).
+### Pré-requisitos
+* **Java 21** ou superior.
+* **Apache Maven**.
 
-Passos
-Clone o repositório:
-
-Bash
-git clone https://github.com/seu-usuario/flowcontrol.git
-cd flowcontrol
-Compile o projeto:
-
-Bash
-./mvnw clean install
-Execute a aplicação:
-
-Bash
-./mvnw spring-boot:run
-Acesse no navegador: http://localhost:8082 (ou a porta configurada no seu log).
-
-🧠 Arquitetura e Decisões de Projeto
-O projeto segue o padrão MVC (Model-View-Controller), garantindo a separação de responsabilidades:
-
-Model: Classes que representam as entidades do sistema, como Usuario e Transacao, utilizando Enums para Categorias e Prioridades.
-
-View: Templates HTML utilizando Thymeleaf localizados em src/main/resources/templates.
-
-Controller: Gerencia as rotas e a comunicação entre o usuário e o sistema (UsuarioController e TransacaoController).
-
-Service: Camada de lógica de negócio (ex: cálculo de saldo e validação de e-mail) isolada dos controladores.
-
-Repository: Implementação customizada de persistência em arquivos JSON utilizando Jackson, garantindo que os dados sejam salvos permanentemente em flowcontrol-data/.
-
-Conceitos de Orientação a Objetos Aplicados
-Encapsulamento: Uso de atributos privados e métodos getters/setters nas entidades de modelo.
-
-Abstração: Representação de transações financeiras e usuários através de classes estruturadas.
-
-Injeção de Dependência: Uso do contêiner Spring para gerenciar as instâncias de Services e Repositories através de construtores.
-
-👨‍💻 Equipe Responsável
-Silas Santos da Silva (Desenvolvedor Principal)
-
-Estudante de Sistemas de Informação - Universidade Federal de Sergipe.
-
-Observação: Este projeto é uma atividade acadêmica desenvolvida para consolidar conhecimentos em desenvolvimento Web com Java e Spring Boot no período de 2026.1.
+### Passos para execução
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/seu-usuario/fwc.git](https://github.com/seu-usuario/fwc.git)
+   cd fwc
