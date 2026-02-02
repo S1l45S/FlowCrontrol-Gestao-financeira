@@ -61,7 +61,10 @@ Para simplificar o ambiente de execução e evitar a necessidade de bancos de da
 
 4. **Acesse a plataforma:** Abra o navegador em: http://localhost:8082
 
-##👨‍💻 Equipe Responsável
-* **Silas Santos da Silva
-* **Observação: Este projeto é uma atividade acadêmica realizada para a disciplina de Sistemas de Informação/Programação, focada no desenvolvimento de aplicações web robustas com Spring Boot.
+---
+
+## 👨‍💻 Equipe Responsavel
+
+* **Silas Santos da Silva**
+* **Observação: Este projeto é uma atividade acadêmica realizada para a disciplina de Sistemas de Informação/Programação, focada no desenvolvimento de aplicações web robustas com Spring Boot.**
 
