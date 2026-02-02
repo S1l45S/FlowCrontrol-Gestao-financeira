@@ -50,3 +50,18 @@ Para simplificar o ambiente de execução e evitar a necessidade de bancos de da
    ```bash
    git clone [https://github.com/seu-usuario/fwc.git](https://github.com/seu-usuario/fwc.git)
    cd fwc
+   
+2. **Compile o projeto:**
+   ```Bash
+   mvn clean install
+   
+3. **Execute a aplicação:**
+   ```Bash
+   mvn spring-boot:run
+
+4. **Acesse a plataforma:** Abra o navegador em: http://localhost:8082
+
+##👨‍💻 Equipe Responsável
+* **Silas Santos da Silva
+* **Observação: Este projeto é uma atividade acadêmica realizada para a disciplina de Sistemas de Informação/Programação, focada no desenvolvimento de aplicações web robustas com Spring Boot.
+
