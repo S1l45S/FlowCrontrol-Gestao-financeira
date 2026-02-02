@@ -59,7 +59,7 @@ Para simplificar o ambiente de execução e evitar a necessidade de bancos de da
    ```Bash
    mvn spring-boot:run
 
-4. **Acesse a plataforma:** Abra o navegador em: http://localhost:8082
+4. **Acesse a plataforma:** Abra o navegador em: http://localhost:8080
 
 ---
 
